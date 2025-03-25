@@ -1,0 +1,238 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhsgxb5noxn61"]
+
+[ext_resource type="Script" uid="uid://tbx8idq66i2u" path="res://scripts/GameController.gd" id="1_elqb8"]
+[ext_resource type="Texture2D" uid="uid://dqatyqcximupo" path="res://assets/ui/icons/money-32.png" id="2_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://cw2ydgy8oseps" path="res://assets/ui/icons/clock-32.png" id="3_c01mt"]
+[ext_resource type="Texture2D" uid="uid://dmjb7nk5uww0i" path="res://assets/ui/icons/heart-32.png" id="4_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://caf20bfncvg5y" path="res://assets/ui/icons/star-32.png" id="5_jlsqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnwvq"]
+bg_color = Color(0.203922, 0.286275, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
+bg_color = Color(0.160784, 0.501961, 0.72549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0.92549, 0.941176, 0.945098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.741176, 0.764706, 0.780392, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.313726)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c01mt"]
+bg_color = Color(0.203922, 0.286275, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172549, 0.243137, 0.313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.313726)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bbpv"]
+bg_color = Color(0.905882, 0.298039, 0.235294, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 768.0
+color = Color(0.179212, 0.232703, 0.353754, 1)
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("1_elqb8")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeaderPanel" type="Panel" parent="UI"]
+offset_right = 1024.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnwvq")
+
+[node name="TitleLabel" type="Label" parent="UI/HeaderPanel"]
+layout_mode = 0
+offset_right = 459.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 32
+text = "INNOJOURNEY"
+
+[node name="TRLLabel" type="Label" parent="UI/HeaderPanel"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 3.0
+offset_right = 482.0
+offset_bottom = 39.0
+text = "TRL Label"
+
+[node name="PhaseLabel" type="Label" parent="UI/HeaderPanel"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 29.0
+offset_right = 499.0
+offset_bottom = 67.0
+text = "Phase Label"
+
+[node name="ResourcePanel" type="Panel" parent="UI"]
+offset_left = 653.0
+offset_top = 6.0
+offset_right = 1017.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_elqb8")
+
+[node name="ResourceContainer" type="HBoxContainer" parent="UI/ResourcePanel"]
+layout_mode = 0
+offset_right = 362.0
+offset_bottom = 46.0
+theme_override_constants/separation = 20
+
+[node name="MoneyContainer" type="HBoxContainer" parent="UI/ResourcePanel/ResourceContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MoneyIcon" type="TextureRect" parent="UI/ResourcePanel/ResourceContainer/MoneyContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vcsgt")
+
+[node name="MoneyLabel" type="Label" parent="UI/ResourcePanel/ResourceContainer/MoneyContainer"]
+layout_mode = 2
+text = "1000"
+
+[node name="TimeContainer" type="HBoxContainer" parent="UI/ResourcePanel/ResourceContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="TimeIcon" type="TextureRect" parent="UI/ResourcePanel/ResourceContainer/TimeContainer"]
+layout_mode = 2
+texture = ExtResource("3_c01mt")
+
+[node name="TimeLabel" type="Label" parent="UI/ResourcePanel/ResourceContainer/TimeContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="MentalContainer" type="HBoxContainer" parent="UI/ResourcePanel/ResourceContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="MentalIcon" type="TextureRect" parent="UI/ResourcePanel/ResourceContainer/MentalContainer"]
+layout_mode = 2
+texture = ExtResource("4_nxtc6")
+
+[node name="MentalLabel" type="Label" parent="UI/ResourcePanel/ResourceContainer/MentalContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="ReputationContainer" type="HBoxContainer" parent="UI/ResourcePanel/ResourceContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="ReputationIcon" type="TextureRect" parent="UI/ResourcePanel/ResourceContainer/ReputationContainer"]
+layout_mode = 2
+texture = ExtResource("5_jlsqs")
+
+[node name="ReputationLabel" type="Label" parent="UI/ResourcePanel/ResourceContainer/ReputationContainer"]
+layout_mode = 2
+text = "50"
+
+[node name="CharacterDisplay" type="Panel" parent="UI"]
+offset_left = 624.0
+offset_top = 110.0
+offset_right = 1024.0
+offset_bottom = 510.0
+
+[node name="CharacterSprite" type="Sprite2D" parent="UI/CharacterDisplay"]
+position = Vector2(200, 200)
+
+[node name="DialogContainer" type="Panel" parent="UI"]
+offset_top = 110.0
+offset_right = 624.0
+offset_bottom = 510.0
+
+[node name="DialogPanel" type="Panel" parent="UI/DialogContainer"]
+layout_mode = 0
+offset_right = 622.0
+offset_bottom = 396.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcsgt")
+
+[node name="TitleLabel" type="Label" parent="UI/DialogContainer/DialogPanel"]
+layout_mode = 0
+offset_right = 622.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.172549, 0.243137, 0.313726, 1)
+theme_override_font_sizes/font_size = 24
+text = "Dialog Title"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="UI/DialogContainer/DialogPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 57.0
+offset_right = 618.0
+offset_bottom = 396.0
+theme_override_colors/default_color = Color(0.203922, 0.286275, 0.368627, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Dialog description will appear here with the story context."
+
+[node name="ChoiceContainer" type="Panel" parent="UI"]
+offset_top = 510.0
+offset_right = 1024.0
+offset_bottom = 768.0
+
+[node name="ChoicePanel" type="Panel" parent="UI/ChoiceContainer"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 1000.0
+offset_bottom = 235.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c01mt")
+
+[node name="ChoiceButtons" type="VBoxContainer" parent="UI/ChoiceContainer/ChoicePanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 960.0
+offset_bottom = 205.0
+theme_override_constants/separation = 10
+
+[node name="FeedbackPanel" type="Panel" parent="UI"]
+offset_left = 212.0
+offset_top = 234.0
+offset_right = 812.0
+offset_bottom = 434.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0bbpv")
+
+[node name="FeedbackLabel" type="Label" parent="UI/FeedbackPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 531.0
+offset_bottom = 180.0
+autowrap_mode = 2

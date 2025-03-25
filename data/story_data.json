@@ -1,0 +1,218 @@
+{
+  "game_title": "INNOJOURNEY - Innovation Odyssey MVP",
+  "protagonist": {
+	"default_name": "Dr. Csaba Singer",
+	"default_bio": "A researcher devoted to developing a revolutionary biodiversity monitoring aircraft."
+  },
+  "invention": {
+	"name": "H-AERO Biodiversity Monitoring Aircraft",
+	"sdg": "SDG15 - Life on Land",
+	"description": "An unmanned aerial vehicle designed to monitor wildlife biodiversity."
+  },
+  "phases": {
+	"1": {
+	  "name": "Dreams Unveiled",
+	  "description": "Initial conceptualization of the invention begins, where the researcher's dreams and motivations take shape based on the SDG.",
+	  "trl_level": 1,
+	  "ending_milestone": "The concept and design of the invention is sketched by the researcher",
+	  "background_image": "res://assets/backgrounds/dream_phase.png",
+	  "ambient_music": "res://assets/audio/dream_theme.ogg",
+	  "steps": {
+		"1": {
+		  "title": "Childhood Inspiration",
+		  "description": "From a young age, you have been enchanted by the diversity of life, spending countless hours exploring the wilderness near your grandparents' farm. This childhood awe fuels your intrinsic drive to protect vulnerable species facing extinction from human activities.",
+		  "scene_type": "dialog",
+		  "character_image": "res://assets/characters/protagonist_thinking.png",
+		  "choices": [
+			{
+			  "text": "Focus on developing monitoring technology to track endangered species",
+			  "is_correct": true,
+			  "feedback": "This direction aligns perfectly with your passion and SDG15.",
+			  "resource_changes": {
+				"mental_health": 5,
+				"time": -5
+			  },
+			  "next_step": "2"
+			},
+			{
+			  "text": "Consider developing hunting drones instead - they would be more profitable",
+			  "is_correct": false,
+			  "feedback": "While potentially profitable, this contradicts your core values and SDG15 goals.",
+			  "resource_changes": {
+				"mental_health": -10
+			  }
+			}
+		  ]
+		},
+		"2": {
+		  "title": "Initial Research",
+		  "description": "You begin researching existing wildlife monitoring technologies and their limitations. Current methods are either invasive, expensive, or provide incomplete data.",
+		  "scene_type": "lab",
+		  "character_image": "res://assets/characters/protagonist_researching.png",
+		  "choices": [
+			{
+			  "text": "Study aerial monitoring technologies to find innovation opportunities",
+			  "is_correct": true,
+			  "feedback": "This approach helps you identify the technological gaps you can address.",
+			  "resource_changes": {
+				"time": -10,
+				"money": -200,
+				"reputation": 5
+			  },
+			  "next_step": "3"
+			},
+			{
+			  "text": "Skip the research phase to save time and just start building",
+			  "is_correct": false,
+			  "feedback": "Without proper research, you'll likely miss critical design requirements.",
+			  "resource_changes": {
+				"time": 5,
+				"reputation": -5
+			  }
+			}
+		  ]
+		},
+		"3": {
+		  "title": "Concept Formulation",
+		  "description": "After weeks of research, you begin sketching preliminary designs for a novel aerial monitoring system that could revolutionize wildlife conservation efforts.",
+		  "scene_type": "lab",
+		  "character_image": "res://assets/characters/protagonist_sketching.png",
+		  "choices": [
+			{
+			  "text": "Focus on an energy-efficient, quiet design to minimize wildlife disturbance",
+			  "is_correct": true,
+			  "feedback": "This approach addresses a key limitation of current technologies.",
+			  "resource_changes": {
+				"time": -15,
+				"money": -300,
+				"mental_health": 10,
+				"reputation": 10
+			  },
+			  "next_step": "milestone"
+			},
+			{
+			  "text": "Prioritize high-speed and long-range capabilities over environmental impact",
+			  "is_correct": false,
+			  "feedback": "Speed and range are important, but not at the expense of the wildlife you're trying to protect.",
+			  "resource_changes": {
+				"mental_health": -5
+			  }
+			}
+		  ]
+		},
+		"milestone": {
+		  "title": "Phase Complete: Dreams Unveiled",
+		  "description": "Congratulations! You've successfully completed the conceptual design of your biodiversity monitoring aircraft. The detailed sketches and specifications provide a solid foundation for moving into the prototype development phase.",
+		  "scene_type": "milestone",
+		  "character_image": "res://assets/characters/protagonist_success.png",
+		  "next_phase": 2
+		}
+	  }
+	},
+	"2": {
+	  "name": "Prototype Genesis",
+	  "description": "Signifying the birth of the invention, the lab-size prototype development begins.",
+	  "trl_level": 3,
+	  "ending_milestone": "The lab-sized prototype is created by the researcher",
+	  "background_image": "res://assets/backgrounds/prototype_phase.png",
+	  "ambient_music": "res://assets/audio/prototype_theme.ogg",
+	  "steps": {
+		"1": {
+		  "title": "Component Sourcing",
+		  "description": "With your designs finalized, you begin sourcing the components needed to build your first prototype. You need to carefully select parts that will work together efficiently.",
+		  "scene_type": "lab",
+		  "character_image": "res://assets/characters/protagonist_planning.png",
+		  "choices": [
+			{
+			  "text": "Carefully select high-quality, environmentally sustainable components",
+			  "is_correct": true,
+			  "feedback": "Quality components will reduce failures and align with your environmental values.",
+			  "resource_changes": {
+				"time": -15,
+				"money": -800,
+				"mental_health": 5,
+				"reputation": 5
+			  },
+			  "next_step": "2"
+			},
+			{
+			  "text": "Purchase the cheapest available components to save money",
+			  "is_correct": false,
+			  "feedback": "Cutting corners on components will likely lead to prototype failures.",
+			  "resource_changes": {
+				"money": 400,
+				"reputation": -5
+			  }
+			}
+		  ]
+		},
+		"2": {
+		  "title": "Assembly Challenges",
+		  "description": "As you begin assembling the prototype, you encounter unexpected integration issues between components. This is a critical phase that requires careful problem-solving.",
+		  "scene_type": "lab",
+		  "character_image": "res://assets/characters/protagonist_working.png",
+		  "choices": [
+			{
+			  "text": "Take time to methodically resolve each integration issue properly",
+			  "is_correct": true,
+			  "feedback": "A systematic approach ensures a solid foundation for your prototype.",
+			  "resource_changes": {
+				"time": -20,
+				"money": -200,
+				"mental_health": -5,
+				"reputation": 10
+			  },
+			  "next_step": "3"
+			},
+			{
+			  "text": "Use quick workarounds to speed up the assembly process",
+			  "is_correct": false,
+			  "feedback": "Short-term fixes often lead to bigger problems down the road.",
+			  "resource_changes": {
+				"time": 10,
+				"mental_health": 5,
+				"reputation": -10
+			  }
+			}
+		  ]
+		},
+		"3": {
+		  "title": "Initial Testing",
+		  "description": "Your prototype is assembled and ready for its first test run. This will be the moment of truth to see if your concept works in practice.",
+		  "scene_type": "lab",
+		  "character_image": "res://assets/characters/protagonist_testing.png",
+		  "choices": [
+			{
+			  "text": "Conduct comprehensive tests in a controlled indoor environment first",
+			  "is_correct": true,
+			  "feedback": "Starting with controlled tests helps identify issues safely.",
+			  "resource_changes": {
+				"time": -10,
+				"money": -100,
+				"mental_health": 10,
+				"reputation": 5
+			  },
+			  "next_step": "milestone"
+			},
+			{
+			  "text": "Skip indoor testing and go straight to field testing to save time",
+			  "is_correct": false,
+			  "feedback": "Outdoor testing without proper preparation could damage your prototype and waste resources.",
+			  "resource_changes": {
+				"time": 5,
+				"mental_health": -10,
+				"reputation": -5
+			  }
+			}
+		  ]
+		},
+		"milestone": {
+		  "title": "Phase Complete: Prototype Genesis",
+		  "description": "You've successfully built and tested your first lab-sized prototype! Though it's still rough around the edges, it proves your concept is viable and provides valuable data for refinement.",
+		  "scene_type": "milestone",
+		  "character_image": "res://assets/characters/protagonist_success.png"
+		}
+	  }
+	}
+  }
+}
